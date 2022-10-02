@@ -37,7 +37,7 @@ namespace ESourcing.Products.Controllers
             return Ok(products);
         }
 
-        [HttpGet("{id:lenght(24)}",Name ="GetProduct")]
+        [HttpGet("{id}",Name ="GetProduct")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(Product),(int)HttpStatusCode.OK)]
         public async Task<ActionResult<Product>> GetProduct(string id)
@@ -68,7 +68,7 @@ namespace ESourcing.Products.Controllers
             return Ok(await _productRepository.Update(product));
         }
 
-        [HttpDelete("{id:lenght(24)}")]
+        [HttpDelete("{id}")]
         [ProducesResponseType(typeof(Product), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> DeleteProductById(string id)
         {

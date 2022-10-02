@@ -9,7 +9,7 @@ namespace ESourcing.Products.Data
         {
             bool existProduct = productCollection.Find(p => true).Any();
 
-            if (existProduct)
+            if (!existProduct)
             {
                 productCollection.InsertManyAsync(GetConfigureProducts());
             }
